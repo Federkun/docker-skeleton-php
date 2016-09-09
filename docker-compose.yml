@@ -1,10 +1,10 @@
 mysql:
   image: mysql:5.7
   environment:
-    - MYSQL_ROOT_PASSWORD=dev
-    - MYSQL_DATABASE=dev
-    - MYSQL_USER=dev
-    - MYSQL_PASSWORD=dev
+    - MYSQL_ROOT_PASSWORD=phpdocker
+    - MYSQL_DATABASE=phpdocker
+    - MYSQL_USER=phpdocker
+    - MYSQL_PASSWORD=phpdocker
 
 nginx:
   image: phpdockerio/nginx:latest
@@ -17,11 +17,11 @@ nginx:
    - fpm
 
 fpm:
-  build: .
-  dockerfile: ./docker/php-fpm/5.6/Dockerfile
+  extends:
+    file: docker-php.yml
+    service: php70
   volumes:
     - ./app:/var/www/app
-    - ./docker/php-fpm/5.6/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini
   links:
     - mysql
 
