@@ -9,7 +9,7 @@ nginx:
   image: phpdockerio/nginx:latest
   volumes:
       - ./app:/var/www/app
-      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/sites-enabled:/etc/nginx/conf.d
   ports:
    - "8080:80"
   links:
