@@ -1,10 +1,6 @@
 mysql:
   image: mysql:5.7
-  environment:
-    - MYSQL_ROOT_PASSWORD=phpdocker
-    - MYSQL_DATABASE=phpdocker
-    - MYSQL_USER=phpdocker
-    - MYSQL_PASSWORD=phpdocker
+  env_file: .env
 
 nginx:
   image: phpdockerio/nginx:latest
