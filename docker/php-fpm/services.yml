@@ -1,0 +1,17 @@
+php56:
+  build: .
+  dockerfile: ./5.6/Dockerfile
+  volumes:
+   - ./5.6/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini
+
+php70:
+  build: .
+  dockerfile: ./7.0/Dockerfile
+  volumes:
+    - ./7.0/php-ini-overrides.ini:/etc/php/7.0/fpm/conf.d/99-overrides.ini
+
+php71:
+  build: .
+  dockerfile: ./7.1/Dockerfile
+  volumes:
+   - ./7.1/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini

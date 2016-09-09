@@ -1,1 +1,4 @@
 .env
+/var/*
+/var/storage/mysql/*
+!var/storage/mysql/.gitkeep

@@ -1,6 +1,9 @@
 mysql:
   image: mysql:5.7
   env_file: .env
+  volumes:
+    - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    - ./var/storage/mysql:/var/lib/mysql
 
 nginx:
   image: phpdockerio/nginx:latest
@@ -14,7 +17,7 @@ nginx:
 
 fpm:
   extends:
-    file: docker-php.yml
+    file: ./docker/php-fpm/services.yml
     service: php70
   volumes:
     - ./app:/var/www/app
