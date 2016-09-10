@@ -16,7 +16,7 @@
     $ docker-compose up -d
     ```
 
-3. Access your application via http://localhost:8080.
+3. Access your application via http://localhost
 
 ## Docker commands
 

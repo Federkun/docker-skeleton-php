@@ -11,7 +11,7 @@ nginx:
       - ./app:/var/www/app
       - ./docker/nginx/sites-enabled:/etc/nginx/conf.d
   ports:
-   - "8080:80"
+   - "80:80"
   links:
    - fpm
 
@@ -21,6 +21,15 @@ fpm:
     service: php70
   volumes:
     - ./app:/var/www/app
+  links:
+    - mysql
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+   - "8080:80"
+  environment:
+    PMA_HOST: mysql
   links:
     - mysql
 
