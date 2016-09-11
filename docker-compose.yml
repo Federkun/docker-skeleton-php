@@ -1,28 +1,28 @@
-mysql:
-  image: mysql:5.7
-  env_file: .env
-  volumes:
-    - ./docker/mysql/conf.d:/etc/mysql/conf.d
-    - ./var/storage/mysql:/var/lib/mysql
-
 nginx:
-  image: phpdockerio/nginx:latest
+  build: ./services/nginx
   volumes:
-      - ./app:/var/www/app
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    - ./app:/var/www
+    - ./sites:/etc/nginx/conf.d
   ports:
    - "80:80"
+   - "443:443"
   links:
-   - fpm
+   - php
 
-fpm:
-  extends:
-    file: ./docker/php-fpm/services.yml
-    service: php70
+php:
+  build: ./services/php/7.0
   volumes:
-    - ./app:/var/www/app
+    - ./app:/var/www
   links:
     - mysql
+
+mysql:
+  image: mysql
+  ports:
+    - "3306:3306"
+  env_file: .env
+  volumes:
+    - ./var/storage/mysql:/var/lib/mysql
 
 phpmyadmin:
   image: phpmyadmin/phpmyadmin

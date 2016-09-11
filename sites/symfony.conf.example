@@ -3,7 +3,7 @@ server {
 
     access_log /var/log/nginx/access.log;
 
-    root /var/www/app/web;
+    root /var/www/web;
 
     rewrite ^/app\.php/?(.*)$ /$1 permanent;
 
@@ -19,7 +19,7 @@ server {
     }
 
     location ~ ^/(app|app_dev)\.php(/|$) {
-        fastcgi_pass fpm:9000;
+        fastcgi_pass php:9000;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         fastcgi_index app.php;
         send_timeout 1800;
