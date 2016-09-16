@@ -43,9 +43,17 @@ $ docker-compose stop
 $ docker-compose rm
 ```
 
-## Other
+## F.A.Q.
 
-* _I need phpMyAdmin_
+* _How can I use Composer?_
+
+    Run Composer through the `php` container:
+
+    ```bash
+    $ docker exec -it <php_container_name> composer install
+    ```
+
+* _Can I use phpMyAdmin?_
 
     You can include `docker-compose.phpmyadmin.yml` with the other services. Run this:
 
@@ -54,3 +62,4 @@ $ docker-compose rm
     ```
 
     Then go to [http://localhost:8080/](http://localhost:8080/)
+
