@@ -1,35 +1,48 @@
-nginx:
-  build: ./services/nginx
-  volumes:
-    - ./app:/var/www
-    - ./sites:/etc/nginx/conf.d
-  ports:
-   - "80:80"
-   - "443:443"
-  links:
-   - php
+version: '2'
 
-php:
-  build: ./services/php/7.0
-  volumes:
-    - ./app:/var/www
-  links:
-    - mysql
+#
+# Services definition
+#
+services:
+  nginx:
+    build: ./services/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./app:/var/www
+      - ./sites:/etc/nginx/conf.d
+    networks:
+      - frontend
+      - backend
 
-mysql:
-  image: mysql
-  ports:
-    - "3306:3306"
-  env_file: .env
-  volumes:
-    - ./var/storage/mysql:/var/lib/mysql
+  php:
+    build: ./services/php/7.0
+    volumes:
+      - ./app:/var/www
+    networks:
+      - backend
 
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  ports:
-   - "8080:80"
-  environment:
-    PMA_HOST: mysql
-  links:
-    - mysql
+  mysql:
+    image: mysql
+    env_file: .env
+    volumes:
+      - data-mysql:/var/lib/mysql
+    networks:
+      - backend
 
+#
+# Volumes definition
+#
+volumes:  
+  data-mysql:
+    driver: local
+
+#
+# Networks definition
+#
+networks:  
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
