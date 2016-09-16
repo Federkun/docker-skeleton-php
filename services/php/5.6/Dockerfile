@@ -2,6 +2,12 @@
 
 FROM debian:jessie
 
+# Change composer home directory
+ENV COMPOSER_HOME /composer
+
+# Allow composer to be run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
 # Install dotdeb repo, PHP, composer and selected extensions
 RUN apt-get update \
     && apt-get -y --no-install-recommends install curl ca-certificates \

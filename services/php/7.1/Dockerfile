@@ -2,6 +2,12 @@
 
 FROM ubuntu
 
+# Change composer home directory
+ENV COMPOSER_HOME /composer
+
+# Allow composer to be run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
 # Install Ondrej repos for Ubuntu Xenial, PHP7.1, composer and selected extensions
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-php.list \
     && echo "deb http://ppa.launchpad.net/ondrej/php-qa/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-php-qa.list \
