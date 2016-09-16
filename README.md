@@ -50,7 +50,7 @@ $ docker-compose rm
     Run Composer through the `php` container:
 
     ```bash
-    $ docker exec -it <php_container_name> composer install
+    $ docker-compose run --rm php composer install
     ```
 
 * _Can I use phpMyAdmin?_
