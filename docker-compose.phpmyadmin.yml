@@ -1,0 +1,14 @@
+version: '2'
+
+#
+# Services definition
+#
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+     - "8080:80"
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - backend

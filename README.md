@@ -16,9 +16,9 @@
     $ docker-compose up -d
     ```
 
-3. Access your application via http://localhost
+3. Access your application via [http://localhost/](http://localhost/)
 
-## Docker commands
+## Useful docker commands
 
 ```bash
 # Rebuild services. Run if you change a service’s Dockerfile.
@@ -42,3 +42,15 @@ $ docker-compose stop
 # Removes stopped service containers. Any data which is not in a volume will be lost.
 $ docker-compose rm
 ```
+
+## Other
+
+* _I need phpMyAdmin_
+
+    You can include `docker-compose.phpmyadmin.yml` with the other services. Run this:
+
+    ```bash
+    $ docker-compose -f docker-compose.yml -f docker-compose.phpmyadmin.yml up -d
+    ```
+
+    Then go to [http://localhost:8080/](http://localhost:8080/)
