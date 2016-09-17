@@ -17,6 +17,7 @@ services:
       - backend
   php:
     image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php:latest
+    env_file: .env
     volumes:
       - ./app:/var/www
     networks:
