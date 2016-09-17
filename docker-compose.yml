@@ -6,6 +6,7 @@ version: '2'
 services:
   nginx:
     build: ./services/nginx
+    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx
     ports:
       - "80:80"
       - "443:443"
@@ -15,14 +16,13 @@ services:
     networks:
       - frontend
       - backend
-
   php:
     build: ./services/php/7.0
+    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php
     volumes:
       - ./app:/var/www
     networks:
       - backend
-
   mysql:
     image: mysql
     env_file: .env

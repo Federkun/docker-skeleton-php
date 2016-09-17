@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+source .env
+
+docker-compose build
+docker push ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx
+docker push ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php
+
+#
+# You can then comment
+#
+# ````
+# build: ./services/nginx
+# ````
+#
+# and
+#
+# ````
+# build: ./services/php/7.0
+# ````
+#
+# from your docker-compose.yml file.
+#
