@@ -39,6 +39,12 @@ $ docker exec -it <container_name> /bin/bash
 # View logs.
 $ docker-compose logs
 
+# List/remove network.
+$ docker network [ ls | rm <network_name> ]
+
+# List/remove volumes.
+$ docker volume [ ls | rm <volume_name> ]
+
 # Stop containers.
 $ docker-compose stop
 
