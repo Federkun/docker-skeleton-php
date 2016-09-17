@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd $DIR/..
+source .env
+
+PS3='Choose which php version you want use: '
+options=("5.6" "7.0" "7.1" "Exit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "5.6")
+            break
+            ;;
+        "7.0")
+            break
+            ;;
+        "7.1")
+            break
+            ;;
+        "Exit")
+            exit
+            ;;
+        *) echo invalid option;;
+    esac
+done
+
+docker build -t ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx:latest services/nginx
+docker build -t ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php:latest services/php/$opt

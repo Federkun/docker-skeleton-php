@@ -4,26 +4,29 @@
 
 ## Usage
 
-1. Copy `.env.dist` to `.env`
+1. Copy `.env.dist` to `.env`.
 
     ```bash
     $ cp .env.dist .env
     ```
 
-2. Start the container.
+2. If you changed at least the `PROJECT_NAMESPACE` or `REPOSITORY_NAME` environment variables from the `.env` file, or you want choose a different version of php, then you need to run this script to build your own images. Otherwise you can skip this step.
+
+    ```bash
+    $ ./bin/build
+    ```
+
+3. Start the container.
 
     ```bash
     $ docker-compose up -d
     ```
 
-3. Access your application via [http://localhost/](http://localhost/)
+4. Access your application via [http://localhost/](http://localhost/).
 
 ## Useful docker commands
 
 ```bash
-# Rebuild services. Run if you change a service’s Dockerfile.
-$ docker-compose build
-
 # Start containers.
 $ docker-compose up -d
 
@@ -33,7 +36,7 @@ $ docker-compose ps
 # Start a terminal session for <container_name>.
 $ docker exec -it <container_name> /bin/bash
 
-# View logs
+# View logs.
 $ docker-compose logs
 
 # Stop containers.

@@ -5,8 +5,7 @@ version: '2'
 #
 services:
   nginx:
-    build: ./services/nginx
-    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx
+    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx:latest
     ports:
       - "80:80"
       - "443:443"
@@ -17,8 +16,7 @@ services:
       - frontend
       - backend
   php:
-    build: ./services/php/7.0
-    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php
+    image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php:latest
     volumes:
       - ./app:/var/www
     networks:
