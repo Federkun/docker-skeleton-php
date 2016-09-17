@@ -76,3 +76,6 @@ $ docker-compose rm
 
     Then go to [http://localhost:8080/](http://localhost:8080/)
 
+## Wiki
+
+* [Create a new Symfony application](https://github.com/Federkun/docker-skeleton-php/wiki/Create-a-new-Symfony-application)
