@@ -1,6 +1,10 @@
 # docker-skeleton-php
 
-*nginx, php, mysql*
+[![nginx](https://img.shields.io/badge/nginx-1.11-brightgreen.svg)]()
+[![mysql](https://img.shields.io/badge/mysql-5.7-brightgreen.svg)]()
+[![php5.6](https://img.shields.io/badge/php-5.6-brightgreen.svg)]()
+[![php7.0](https://img.shields.io/badge/php-7.0-brightgreen.svg)]()
+[![php7.1](https://img.shields.io/badge/php-7.1-brightgreen.svg)]()
 
 ## Usage
 
