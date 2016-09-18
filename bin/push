@@ -6,4 +6,4 @@ cd $DIR/..
 source .env
 
 docker push ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-nginx:latest
-docker push ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php:latest
+docker push ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php
