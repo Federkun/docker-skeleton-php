@@ -16,6 +16,7 @@ RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt
     && apt-get -y --no-install-recommends install curl ca-certificates php7.1-cli php7.1-fpm \
     php7.1-curl \
     php7.1-json \
+    php7.1-intl \
     php7.1-mbstring \
     php7.1-mcrypt \
     php7.1-mysql \

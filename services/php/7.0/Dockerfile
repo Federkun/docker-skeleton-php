@@ -19,6 +19,7 @@ RUN apt-get update \
     php7.0-apcu \
     php7.0-apcu-bc \
     php7.0-curl \
+    php7.0-intl \
     php7.0-gd \
     php7.0-json \
     php7.0-mbstring \
