@@ -1,6 +1,6 @@
 # Configuration from https://github.com/phpdocker-io/
 
-FROM ubuntu
+FROM phusion/baseimage
 
 # Change composer home directory
 ENV COMPOSER_HOME /composer
