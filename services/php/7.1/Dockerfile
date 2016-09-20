@@ -38,11 +38,15 @@ RUN sed -i "/listen = .*/c\listen = [::]:9000" /etc/php/7.1/fpm/pool.d/www.conf 
     && sed -i "/error_log = .*/c\error_log = /proc/self/fd/2" /etc/php/7.1/fpm/php-fpm.conf \
     && usermod -u 1000 www-data
 
-# The following runs FPM and removes all its extraneous log output on top of what your app outputs to stdout
-CMD /usr/sbin/php-fpm7.1 -F -O 2>&1 | sed -u 's,.*: \"\(.*\)$,\1,'| sed -u 's,"$,,' 1>&1
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
 
 # Add php config
 COPY config/php.ini /etc/php/7.1/fpm/conf.d/99-custom.ini
+
+# Define php-fpm service
+RUN mkdir /etc/service/php-fpm
+ADD php-fpm.sh /etc/service/php-fpm/run
 
 # Open fcgi port
 EXPOSE 9000
