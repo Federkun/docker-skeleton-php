@@ -13,8 +13,9 @@ services:
       - ./app:/var/www
       - ./sites:/etc/nginx/conf.d
     networks:
-      - frontend
       - backend
+    depends_on:
+      - php
   php:
     image: ${PROJECT_NAMESPACE}/${REPOSITORY_NAME}-php:latest
     env_file: .env
@@ -41,7 +42,5 @@ volumes:
 # Networks definition
 #
 networks:  
-  frontend:
-    driver: bridge
   backend:
     driver: bridge
