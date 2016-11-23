@@ -10,16 +10,15 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Install dotdeb repo, PHP, composer and selected extensions
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install curl ca-certificates \
-    php5-cli php5-fpm \
-    php5-mysql \
-    php5-gd \
-    php5-apcu \
-    php5-intl \
+    && apt-get -y --no-install-recommends install curl ca-certificates php5-cli php5-fpm \
     php5-curl \
+    php5-gd \
+    php5-intl \
     php5-json \
     php5-mcrypt \
+    php5-mysql \
     php5-readline \
+    php5-sqlite \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*

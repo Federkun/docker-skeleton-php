@@ -14,19 +14,18 @@ RUN apt-get update \
     && echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list \
     && curl -sS https://www.dotdeb.org/dotdeb.gpg | apt-key add - \
     && apt-get update \
-    && apt-get -y --no-install-recommends install \
-    php7.0-cli php7.0-fpm \
-    php7.0-apcu \
-    php7.0-apcu-bc \
+    && apt-get -y --no-install-recommends install php7.0-cli php7.0-fpm \
     php7.0-curl \
-    php7.0-intl \
     php7.0-gd \
+    php7.0-iconv \
+    php7.0-intl \
     php7.0-json \
     php7.0-mbstring \
     php7.0-mcrypt \
     php7.0-mysql \
     php7.0-opcache \
     php7.0-readline \
+    php7.0-sqlite \
     php7.0-xml \
     php7.0-zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
@@ -53,4 +52,3 @@ COPY config/php.ini /etc/php/7.0/fpm/conf.d/99-custom.ini
 EXPOSE 9000
 
 WORKDIR "/var/www"
-
