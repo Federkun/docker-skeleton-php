@@ -38,6 +38,7 @@ CMD /usr/sbin/php5-fpm -F -O 2>&1 | sed -u 's,.*: \"\(.*\)$,\1,'| sed -u 's,"$,,
 
 # Add php config
 COPY config/php.ini /etc/php5/fpm/conf.d/99-custom.ini
+COPY config/php.ini /etc/php5/cli/conf.d/99-custom.ini
 
 # Working directory
 WORKDIR "/var/www"

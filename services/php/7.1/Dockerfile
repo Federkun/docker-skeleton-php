@@ -46,6 +46,7 @@ CMD ["/sbin/my_init"]
 
 # Add php config
 COPY config/php.ini /etc/php/7.1/fpm/conf.d/99-custom.ini
+COPY config/php.ini /etc/php/7.1/cli/conf.d/99-custom.ini
 
 # Define php-fpm service
 RUN mkdir /etc/service/php-fpm

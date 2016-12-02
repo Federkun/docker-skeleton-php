@@ -47,6 +47,7 @@ CMD /usr/sbin/php-fpm7.0 -F -O 2>&1 | sed -u 's,.*: \"\(.*\)$,\1,'| sed -u 's,"$
 
 # Add php config
 COPY config/php.ini /etc/php/7.0/fpm/conf.d/99-custom.ini
+COPY config/php.ini /etc/php/7.0/cli/conf.d/99-custom.ini
 
 # Open fcgi port
 EXPOSE 9000
