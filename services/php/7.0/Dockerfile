@@ -10,7 +10,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Install dotdeb repo, PHP7, composer and selected extensions
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install curl ca-certificates \
+    && apt-get -y --no-install-recommends install curl git ca-certificates \
     && echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list \
     && curl -sS https://www.dotdeb.org/dotdeb.gpg | apt-key add - \
     && apt-get update \
