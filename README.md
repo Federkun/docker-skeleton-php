@@ -30,7 +30,7 @@
 
 ## Choose a different version of php
 
-By default `docker-compose.yml` uses the `latest` tag name of the php image which corresponds to php7.0.
+By default `docker-compose.yml` uses the `latest` tag name of the php image which corresponds to php 7.1.
 
 ```yml
 #
