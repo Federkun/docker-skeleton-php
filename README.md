@@ -95,16 +95,6 @@ $ docker-compose rm
     $ docker-compose run --rm php composer install
     ```
 
-* _Can I use phpMyAdmin?_
-
-    You can include `docker-compose.phpmyadmin.yml` with the other services. Run this:
-
-    ```bash
-    $ docker-compose -f docker-compose.yml -f docker-compose.phpmyadmin.yml up -d
-    ```
-
-    Then go to [http://localhost:8080/](http://localhost:8080/)
-
 ## Wiki
 
 * [Create a new Symfony application](https://github.com/Federkun/docker-skeleton-php/wiki/Create-a-new-Symfony-application)
