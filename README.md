@@ -84,13 +84,3 @@ $ docker-compose stop
 # Removes stopped service containers. Any data which is not in a volume will be lost.
 $ docker-compose rm
 ```
-
-## F.A.Q.
-
-* _How can I use Composer?_
-
-    Run Composer through the `php` container:
-
-    ```bash
-    $ docker-compose run --rm php composer install
-    ```
