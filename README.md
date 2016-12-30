@@ -55,8 +55,8 @@ $ docker-compose restart
 # List containers.
 $ docker-compose ps
 
-# Start a terminal session for <container_name>.
-$ docker exec -it <container_name> /bin/bash
+# Start a terminal session for <container_name> (i.e: php).
+$ docker-compose exec <container_name> /bin/bash
 
 # View logs.
 $ docker-compose logs
