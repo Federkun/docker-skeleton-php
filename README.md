@@ -81,6 +81,6 @@ $ docker volume [ ls | rm <volume_name> ]
 # Stop containers.
 $ docker-compose stop
 
-# Removes stopped service containers. Any data which is not in a volume will be lost.
-$ docker-compose rm
+# Stop and remove containers.
+$ docker-compose down
 ```
