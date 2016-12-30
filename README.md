@@ -94,7 +94,3 @@ $ docker-compose rm
     ```bash
     $ docker-compose run --rm php composer install
     ```
-
-## Wiki
-
-* [Create a new Symfony application](https://github.com/Federkun/docker-skeleton-php/wiki/Create-a-new-Symfony-application)
