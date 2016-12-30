@@ -51,11 +51,11 @@ $ docker-compose up -d
     Symfony 3:
 
     ```bash
-    $ docker-compose run --rm php bin/console
+    $ docker-compose run --rm php php bin/console
     ```
 
     Symfony 2:
 
     ```bash
-    $ docker-compose run --rm php app/console
+    $ docker-compose run --rm php php app/console
     ```
